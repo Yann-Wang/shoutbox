@@ -2,20 +2,59 @@
 <html>
 <head>
     <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <!--<link rel="stylesheet" href="/stylesheets/style.css">-->
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
 <% include menu %>
 
-<h1><%= title %></h1>
+<!--<h1><%# title %></h1>
 <p>Fill in the form below to add a new post.</p>
 
-<% include messages %>
+<%# include messages %>-->
 
-<form action="/post" method="post">
+<div class="container">
+    <div class="row">
+        <div class="page-header col-xs-10 col-md-10">
+            <h1><%= title %> </h1>
+            <p>Fill in the form below to add a new post.</p>
+        </div>
+        <% include messages %>
+    </div>
+
+</div>
+
+
+<!--<form action="/post" method="post">
     <p><input class="post_title" type="text" name="entry[title]" placeholder="Title"></p>
     <p><textarea name="entry[body]" placeholder="Body"></textarea></p>
     <p><input type="submit" value="Post"></p>
+</form>-->
+
+
+<form class="form-horizontal" action="/post" method="post">
+    <div class="form-group">
+        <!--<label for="exampleInputName2" class="col-sm-2 control-label">Title</label>-->
+        <div class="col-sm-offset-1 col-sm-6">
+            <input type="text" name="entry[title]" class="form-control post_title" id="exampleInputName2" placeholder="Title">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <!--<label for="inputPassword3" class="col-sm-2 control-label">Body</label>-->
+        <div class="col-sm-offset-1 col-sm-10">
+            <textarea  class="form-control" rows="6" name="entry[body]" placeholder="Body"></textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-1 col-sm-10">
+            <button type="submit" class="btn btn-default">Post</button>
+        </div>
+    </div>
 </form>
+
+
 </body>
 </html>

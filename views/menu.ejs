@@ -1,12 +1,40 @@
 <% if (locals.user) { %>
+    <!--
     <div id="menu">
-        <span class="name"><a href="/"><%= user.name %></a></span>
+        <span class="name"><a href="/"><%# user.name %></a></span>
         <a href="/post">post</a>
         <a href="/logout">logout</a>
     </div>
+    -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li ><a href="/"><%= user.name %></a></li>
+                    <li><a href="/post">post</a></li>
+                    <li><a href="/logout">logout</a></li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
 <% } else { %>
-    <div id="menu">
+    <!--<div id="menu">
         <a href="/login">login</a>
         <a href="/register">register</a>
-    </div>
+    </div>-->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/login">login</a></li>
+                    <li><a href="/register">register</a></li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
 <% } %>
+

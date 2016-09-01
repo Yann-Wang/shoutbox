@@ -2,18 +2,36 @@
 <html>
 <head>
     <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <!--<link rel="stylesheet" href="/stylesheets/style.css">-->
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
 <% include menu %>
-
+<div class="list-group">
 <% entries.forEach(function(entry) { %>
-    <div class="entry">
-        <h3><%= entry.title %></h3>
-        <p><%= entry.body %></p>
-        <p>Posted by <%= entry.username %></p>
+    <!--<div class="entry">
+        <h3><%# entry.title %></h3>
+        <p><%# entry.body %></p>
+        <p>Posted by <%# entry.username %></p>
+    </div>-->
+
+    <div class="list-group-item entry">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <h4 class="list-group-item-heading"><%= entry.title %></h4>
+                    <p class="list-group-item-text"><%= entry.body %></p>
+                    <h6 class="list-group-item-text">Posted by <%= entry.username %></h6>
+                </div>
+
+            </div>
+        </div>
+
     </div>
+
 <% }) %>
+</div>
 
 <% include pager %>
 
