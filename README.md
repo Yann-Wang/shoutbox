@@ -8,6 +8,7 @@
 - The token session of login module is stored in redis.
 - The user object(including name, password, id) is stored in a hash table of keys to values.
 - The entry objects(including title, body, username) is stored in a list.
+- Use bootstrap to beautify web pages.
 
 ### licence
 MIT
